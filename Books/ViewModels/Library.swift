@@ -28,14 +28,16 @@ class Library: ObservableObject {
     
     // MARK: - Save & Load
                                                                                         // Может изменить способ сохранения
+    private let booksKey = "books"
+    
     private func storeInUserDefaults() {
         if let encodedBooks = try? JSONEncoder().encode(books) {
-            UserDefaults.standard.set(encodedBooks, forKey: "books")
+            UserDefaults.standard.set(encodedBooks, forKey: booksKey)
         }
     }
     
     private func restoreFromUserDefaults() {
-        if let encodedBooks = UserDefaults.standard.data(forKey: "books") {
+        if let encodedBooks = UserDefaults.standard.data(forKey: booksKey) {
             let decodedBooks = try? JSONDecoder().decode([Book].self, from: encodedBooks)
             books = decodedBooks ?? []
         }

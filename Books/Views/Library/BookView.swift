@@ -37,6 +37,6 @@ struct BookView: View {
 
 struct BookView_Previews: PreviewProvider {
     static var previews: some View {
-        BookView(book: Library().books[0])
+        BookView(book: Library.defaultBooks[0])
     }
 }

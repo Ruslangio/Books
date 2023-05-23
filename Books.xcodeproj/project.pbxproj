@@ -16,6 +16,12 @@
 		443C89402A042E920005312C /* BookRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443C893F2A042E920005312C /* BookRow.swift */; };
 		443C89422A0430CC0005312C /* BookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443C89412A0430CC0005312C /* BookView.swift */; };
 		4471EB0A2A14C652003B7DF7 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471EB092A14C652003B7DF7 /* MainView.swift */; };
+		44BD10082A1CD2110056B632 /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BD10072A1CD2110056B632 /* Author.swift */; };
+		44BD100A2A1CD3E00056B632 /* Authors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BD10092A1CD3E00056B632 /* Authors.swift */; };
+		44BD100E2A1CD5E50056B632 /* AuthorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BD100D2A1CD5E50056B632 /* AuthorsView.swift */; };
+		44BD10102A1CD7730056B632 /* AuthorRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BD100F2A1CD7730056B632 /* AuthorRow.swift */; };
+		44BD10122A1CF4E10056B632 /* AuthorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BD10112A1CF4E10056B632 /* AuthorView.swift */; };
+		44BD10142A1CF5F80056B632 /* AddAuthorSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BD10132A1CF5F80056B632 /* AddAuthorSheet.swift */; };
 		44DD6A0A2A03DDFD0083359D /* AddBookSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DD6A092A03DDFD0083359D /* AddBookSheet.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +36,12 @@
 		443C893F2A042E920005312C /* BookRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRow.swift; sourceTree = "<group>"; };
 		443C89412A0430CC0005312C /* BookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookView.swift; sourceTree = "<group>"; };
 		4471EB092A14C652003B7DF7 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		44BD10072A1CD2110056B632 /* Author.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
+		44BD10092A1CD3E00056B632 /* Authors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authors.swift; sourceTree = "<group>"; };
+		44BD100D2A1CD5E50056B632 /* AuthorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorsView.swift; sourceTree = "<group>"; };
+		44BD100F2A1CD7730056B632 /* AuthorRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorRow.swift; sourceTree = "<group>"; };
+		44BD10112A1CF4E10056B632 /* AuthorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorView.swift; sourceTree = "<group>"; };
+		44BD10132A1CF5F80056B632 /* AddAuthorSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAuthorSheet.swift; sourceTree = "<group>"; };
 		44DD6A092A03DDFD0083359D /* AddBookSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,9 +76,9 @@
 			isa = PBXGroup;
 			children = (
 				44269A572A03CDAB00683AAE /* BooksApp.swift */,
-				443C893C2A042E040005312C /* Model */,
-				443C893D2A042E0E0005312C /* ViewModel */,
-				443C893E2A042E1D0005312C /* View */,
+				443C893C2A042E040005312C /* Models */,
+				443C893D2A042E0E0005312C /* ViewModels */,
+				443C893E2A042E1D0005312C /* Views */,
 				44269A5B2A03CDAE00683AAE /* Assets.xcassets */,
 				44269A5D2A03CDAE00683AAE /* Preview Content */,
 			);
@@ -81,32 +93,54 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		443C893C2A042E040005312C /* Model */ = {
+		443C893C2A042E040005312C /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				44269A652A03CDE400683AAE /* Book.swift */,
+				44BD10072A1CD2110056B632 /* Author.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		443C893D2A042E0E0005312C /* ViewModel */ = {
+		443C893D2A042E0E0005312C /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				44269A672A03CF5F00683AAE /* Library.swift */,
+				44BD10092A1CD3E00056B632 /* Authors.swift */,
 			);
-			path = ViewModel;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		443C893E2A042E1D0005312C /* View */ = {
+		443C893E2A042E1D0005312C /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				4471EB092A14C652003B7DF7 /* MainView.swift */,
+				44BD100B2A1CD5AC0056B632 /* Library */,
+				44BD100C2A1CD5CB0056B632 /* Authors */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		44BD100B2A1CD5AC0056B632 /* Library */ = {
+			isa = PBXGroup;
+			children = (
 				44269A592A03CDAB00683AAE /* LibraryView.swift */,
 				443C893F2A042E920005312C /* BookRow.swift */,
 				443C89412A0430CC0005312C /* BookView.swift */,
 				44DD6A092A03DDFD0083359D /* AddBookSheet.swift */,
 			);
-			path = View;
+			path = Library;
+			sourceTree = "<group>";
+		};
+		44BD100C2A1CD5CB0056B632 /* Authors */ = {
+			isa = PBXGroup;
+			children = (
+				44BD100D2A1CD5E50056B632 /* AuthorsView.swift */,
+				44BD100F2A1CD7730056B632 /* AuthorRow.swift */,
+				44BD10112A1CF4E10056B632 /* AuthorView.swift */,
+				44BD10132A1CF5F80056B632 /* AddAuthorSheet.swift */,
+			);
+			path = Authors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,10 +216,16 @@
 				44269A5A2A03CDAB00683AAE /* LibraryView.swift in Sources */,
 				44269A682A03CF6000683AAE /* Library.swift in Sources */,
 				4471EB0A2A14C652003B7DF7 /* MainView.swift in Sources */,
+				44BD10082A1CD2110056B632 /* Author.swift in Sources */,
+				44BD10122A1CF4E10056B632 /* AuthorView.swift in Sources */,
 				44269A582A03CDAB00683AAE /* BooksApp.swift in Sources */,
 				44269A662A03CDE400683AAE /* Book.swift in Sources */,
 				44DD6A0A2A03DDFD0083359D /* AddBookSheet.swift in Sources */,
+				44BD10142A1CF5F80056B632 /* AddAuthorSheet.swift in Sources */,
+				44BD100E2A1CD5E50056B632 /* AuthorsView.swift in Sources */,
 				443C89422A0430CC0005312C /* BookView.swift in Sources */,
+				44BD10102A1CD7730056B632 /* AuthorRow.swift in Sources */,
+				44BD100A2A1CD3E00056B632 /* Authors.swift in Sources */,
 				443C89402A042E920005312C /* BookRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

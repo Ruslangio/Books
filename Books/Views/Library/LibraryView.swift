@@ -24,7 +24,7 @@ struct LibraryView: View {
                 .onDelete(perform: library.deleteBook)
                 .onMove(perform: library.moveBook)
             }
-            .navigationTitle("Books")
+            .navigationTitle("Library")
             .toolbar {
                 ToolbarItemGroup {
                     addBookButton
@@ -36,6 +36,8 @@ struct LibraryView: View {
             }
         }
     }
+    
+    //MARK: - Toolbar buttons
     
     private var addBookButton: some View {
         Button {

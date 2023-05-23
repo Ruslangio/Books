@@ -14,11 +14,11 @@ struct MainView: View {
                 .tabItem {
                     Label("Library", systemImage: "books.vertical.fill")
                 }
-            Text("Authors View")                                               // Временно
+            AuthorsView()
                 .tabItem {
-                    Label("Authors", systemImage: "person.3.sequence")
+                    Label("Authors", systemImage: "person.3.sequence")              // Выбрать иконку
                 }
-            Text("Search View")
+            Text("Search View")                                                 // Временно
                 .tabItem {
                     Label("Search", systemImage: "magnifyingglass")
                 }
