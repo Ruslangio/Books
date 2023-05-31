@@ -9,15 +9,15 @@ import SwiftUI
 
 struct LibraryView: View {
     @EnvironmentObject var library: Library
+    
     @State private var isShowingAddBookSheet = false
+    @State private var searchText = ""
         
     var body: some View {
         NavigationStack {
             List {
-                ForEach(library.sortedBooks) { book in
-                    NavigationLink {                                    // Возможно надо изменить
-                        BookView(book: book)
-                    } label: {
+                ForEach(books) { book in
+                    NavigationLink(destination: BookView(book: book)) {                     // Изменить! Используется старая версия
                         BookRow(book: book)
                     }
                     .swipeActions(edge: .leading) {
@@ -43,9 +43,18 @@ struct LibraryView: View {
                 AddBookSheet()
             }
         }
+        .searchable(text: $searchText)                                                 // Правильно ли место?
     }
     
-    //MARK: - Toolbar buttons
+    var books: [Book] {
+        if searchText.isEmpty {
+            return library.sortedBooks
+        } else {
+            return library.sortedBooks.filter { $0.title.localizedCaseInsensitiveContains(searchText) || $0.author.localizedCaseInsensitiveContains(searchText) }
+        }
+    }
+    
+    // MARK: - Toolbar buttons
     
     private var addBookButton: some View {
         Button {

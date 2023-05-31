@@ -13,7 +13,8 @@ class Library: ObservableObject {
         Book(title: "Бойцовский клуб", author: "Чак Паланик", year: "1996", country: "США"),
         Book(title: "Скотный двор", author: "Джордж Оруэлл", year: "1945", country: "Великобритания"),
         Book(title: "Битва королей", author: "Джордж Р.Р. Мартин", year: "1998", country: "США"),
-        Book(title: "Свидание с Рамой", author: "Артур Кларк", year: "1973", country: "Великобритания")
+        Book(title: "Свидание с Рамой", author: "Артур Кларк", year: "1973", country: "Великобритания"),
+        Book(title: "Всадник без головы", author: "Майн Рид", year: "1865", country: "Великобритания")
     ]
     
     @Published private(set) var books = defaultBooks {
