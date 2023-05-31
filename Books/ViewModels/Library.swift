@@ -82,4 +82,10 @@ class Library: ObservableObject {
     func moveBook(fromOffsets: IndexSet, toOffset: Int) {                           // Поменять названия входных данных
         books.move(fromOffsets: fromOffsets, toOffset: toOffset)
     }
+    
+    func toggleReading(of book: Book) {                                // Поменять название      Да и вообще пересмотреть функцию
+        if let index = books.firstIndex(where: { $0 == book }) {
+            books[index].isRead.toggle()
+        }
+    }
 }

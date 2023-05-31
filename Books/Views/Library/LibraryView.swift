@@ -20,6 +20,14 @@ struct LibraryView: View {
                     } label: {
                         BookRow(book: book)
                     }
+                    .swipeActions(edge: .leading) {
+                        Button {
+                            library.toggleReading(of: book)
+                        } label: {
+                            Image(systemName: "book.circle")                    // Найти подходящую иконку
+                        }
+
+                    }
                 }
                 .onDelete(perform: library.deleteBook)
                 .onMove(perform: library.moveBook)
@@ -61,7 +69,7 @@ struct LibraryView: View {
             Menu {
                 Button("Doesn't work", action: {})
             } label: {
-                Label("Filter", systemImage: "slider.horizontal.3")
+                Label("Filter", systemImage: "line.3.horizontal.decrease.circle")                       // Или лучше "slider.horizontal.3"?
             }
         } label: {
             Image(systemName: "ellipsis.circle")

@@ -13,4 +13,5 @@ struct Book: Identifiable, Hashable, Codable {
     let author: String
     let year: String
     let country: String
+    var isRead = false
 }
