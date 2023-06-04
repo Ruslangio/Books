@@ -34,9 +34,12 @@ struct LibraryView: View {
             }
             .navigationTitle("Library")
             .toolbar {
-                ToolbarItemGroup {
+                ToolbarItem(placement: .navigationBarLeading) {
                     addBookButton
-                    menu
+                }
+                ToolbarItemGroup {
+                    sortingButton
+                    filterButton
                 }
             }
             .sheet(isPresented: $isShowingAddBookSheet) {
@@ -64,24 +67,23 @@ struct LibraryView: View {
         }
     }
     
-    private var menu: some View {
+    private var sortingButton: some View {
         Menu {
-            Menu {
-                Picker("Sorting", selection: $library.sorting) {
-                    ForEach(Library.SortOptions.allCases, id: \.self) {
-                        Text("\($0.rawValue.capitalized)")
-                    }
+            Picker("Sorting", selection: $library.sorting) {
+                ForEach(Library.SortOptions.allCases, id: \.self) {
+                    Text("\($0.rawValue.capitalized)")
                 }
-            } label: {
-                Label("Sort by", systemImage: "arrow.up.arrow.down")
-            }
-            Menu {
-                Button("Doesn't work", action: {})
-            } label: {
-                Label("Filter", systemImage: "line.3.horizontal.decrease.circle")                       // Или лучше "slider.horizontal.3"?
             }
         } label: {
-            Image(systemName: "ellipsis.circle")
+            Label("Sort by", systemImage: "arrow.up.arrow.down")
+        }
+    }
+    
+    private var filterButton: some View {
+        Menu {
+            Button("Doesn't work", action: {})
+        } label: {
+            Label("Filter", systemImage: "line.3.horizontal.decrease.circle")                       // Или лучше "slider.horizontal.3"?
         }
     }
 }
